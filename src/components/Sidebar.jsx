@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function Sidebar() {
-    const [selectedOption, setSelectedOption] = useState("Inicio");
+    const [selectedOption, setSelectedOption] = useState("");
 
     useEffect(() => {
         // Obtén el pathname actual de la URL

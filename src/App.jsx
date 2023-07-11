@@ -4,10 +4,12 @@ import Person from './pages/Person';
 import User from './pages/User';
 import Alert from './pages/Alert';
 import Home from './pages/Home';
+import Index from './pages/Index';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Index/>} />
         <Route path="/admin" element={<Home/>}/>
         <Route path='/admin/machinery' element={<Machinery/>}/>
         <Route path='/admin/person' element={<Person/>}/>

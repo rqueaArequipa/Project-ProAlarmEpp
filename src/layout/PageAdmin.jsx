@@ -38,7 +38,6 @@ function Admin({children}) {
         <div className='App' id='body'>
             <Header openCloseMenu={openCloseMenu} />
             <Sidebar/>
-
             <main>
                 {children}
             </main>
