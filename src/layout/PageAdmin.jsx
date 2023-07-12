@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../assets/css/style.css';
-import '../assets/css/estilos.css';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
@@ -38,7 +36,6 @@ function Admin({children}) {
         <div className='App' id='body'>
             <Header openCloseMenu={openCloseMenu} />
             <Sidebar/>
-
             <main>
                 {children}
             </main>

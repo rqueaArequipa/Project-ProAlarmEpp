@@ -96,6 +96,7 @@ header{
     display: block;
     position: relative;
     transition: color 300ms;
+    text-decoration: none;
 }
 
 .options__menu .nav_link:hover{
@@ -118,6 +119,7 @@ header{
 .options__menu .option h4{
     font-weight: 300;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav_link .selected{
