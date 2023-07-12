@@ -23,7 +23,6 @@ function Machinery() {
         }
         fetchData()
     }, [])
-
     const componentNew = (select) => {
         setListAddMachinery(select)
     }
@@ -38,7 +37,6 @@ function Machinery() {
                         machineries={machineries}
                         componentNew={componentNew}
                     />
-                    
             }
         </Admin>
     )

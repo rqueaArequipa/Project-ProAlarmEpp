@@ -1,4 +1,6 @@
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
+import './assets/css/style.css';
+import './assets/css/estilos.css';
 import Machinery from './pages/Machinery';
 import Person from './pages/Person';
 import User from './pages/User';

@@ -3,6 +3,8 @@ import { faBars, faHome, faFile, faVideo, faStickyNote, faIdBadge, faAddressCard
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import '../assets/css/style.css';
+import '../assets/css/estilos.css';
 
 function Sidebar() {
     const [selectedOption, setSelectedOption] = useState("");
