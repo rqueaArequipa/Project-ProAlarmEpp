@@ -8,6 +8,7 @@ import {
     Image,
     InputGroup
 } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function FormMachinery({ machinery, onSubmit, onCancel }) {
