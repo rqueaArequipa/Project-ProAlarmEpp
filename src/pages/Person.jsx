@@ -195,14 +195,8 @@ function Person() {
                                 <td>{person.certifications}</td>
                                 <td>{person.machinery}</td>
                                 <td>
-                                    <div className="acciones">
-                                        <div className="btn-del">
-                                            <button onClick={() => { eliminar(person.id) }}>Eliminar</button>
-                                        </div>
-                                        <div className="btn-edit">
-                                            <button onClick={() => { mostardatos(person); setValorboton("Actualizar"); setDataperson(person) }}>Editar</button>
-                                        </div>
-                                    </div>
+                                    <button onClick={() => { eliminar(person.id) }}>Eliminar</button>
+                                    <button onClick={() => { mostardatos(person); setValorboton("Actualizar"); setDataperson(person) }}>Editar</button>
                                 </td>
 
                             </tr>
