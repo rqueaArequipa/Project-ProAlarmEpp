@@ -21,21 +21,10 @@ function Person() {
     const [person, setPerson] = useState([])
     const [dataperson, setDataperson] = useState([])
 
-    const [modalVisible, setModalVisible] = useState(false);
-
-    const handleComprar = () => {
-        setModalVisible(true);
-    };
-
-    const handleOutsideClick = (event) => {
-        if (event.target.classList.contains("modal")) {
-            setModalVisible(false);
-        }
-    };
-
+    
 
     useEffect(() => {
-        document.addEventListener("click", handleOutsideClick);
+        
         const obtenerPerson = async () => {
             try {
                 const x = await Data.viewPerson(setPerson)
@@ -46,9 +35,6 @@ function Person() {
             }
         }
         obtenerPerson()
-        return () => {
-            document.removeEventListener("click", handleOutsideClick);
-        };
     }, [])
 
     const [valorboton, setValorboton] = useState("Registrar")
@@ -62,10 +48,10 @@ function Person() {
                 await Data.personRegister(name, lname, dni, number, email, cumple, address, certificado, maquina)
                 await Data.viewPerson(setPerson)
             }
-            else{
-                await Data.personUpdate( dataperson.id, name, lname, dni, number, email, cumple, address, certificado, maquina)
+            else {
+                await Data.personUpdate(dataperson.id, name, lname, dni, number, email, cumple, address, certificado, maquina)
                 await Data.viewPerson(setPerson)
-              
+
             }
 
 
@@ -104,8 +90,9 @@ function Person() {
 
     return (
         <Admin>
+            <h1 >Persons</h1>
             <div className="person">
-                <button onClick={()=> {setValorboton("Registrar")}}>Modo registros</button>
+                <button onClick={() => { setValorboton("Registrar") }}>Modo registros</button>
                 <form onSubmit={registrar}>
                     <ToastContainer />
                     <div className="p-campos">
@@ -208,8 +195,14 @@ function Person() {
                                 <td>{person.certifications}</td>
                                 <td>{person.machinery}</td>
                                 <td>
-                                    <button onClick={() => { eliminar(person.id) }}>Eliminar</button>
-                                    <button onClick={() => { mostardatos(person); setValorboton("Actualizar") ;setDataperson(person) }}>Editar</button>
+                                    <div className="acciones">
+                                        <div className="btn-del">
+                                            <button onClick={() => { eliminar(person.id) }}>Eliminar</button>
+                                        </div>
+                                        <div className="btn-edit">
+                                            <button onClick={() => { mostardatos(person); setValorboton("Actualizar"); setDataperson(person) }}>Editar</button>
+                                        </div>
+                                    </div>
                                 </td>
 
                             </tr>
@@ -217,18 +210,12 @@ function Person() {
                     </tbody>
                 </table>
 
-                <section className="person-modal">
-                    {modalVisible && (
-                        <div className="modal">
-                            <h1>hola</h1>
-                        </div>
-                    )}
-                </section>
+                
 
 
 
             </div>
-            <h1 >Persons</h1>
+            
         </Admin>
     )
 }
